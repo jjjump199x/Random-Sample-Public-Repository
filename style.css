@@ -1,0 +1,42 @@
+body {
+    font-family: Helvetica, sans-serif;
+    color: rgb(36, 35, 35);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header > button {
+    max-height: 40px;
+}
+
+.edited { font-weight: bold; font-style: italic;}
+
+p { margin: 5px 0; }
+
+h4 { margin-bottom: 0; }
+
+ul { 
+    margin-top: 0;
+    list-style-type: circle;
+}
+
+div.width50 { width: 50%; }
+
+table#completed {text-decoration: line-through;}
+
+.icon-btn { padding: 0; margin-left: 5px}
+
+#delete-all { color: crimson; }
+
+#complete-all, #response-msg { color: #478c02; }
+
+#skills-list span {
+    border-radius: 8%;
+    padding: 4px;
+    background-color: #0ac9c9;
+}
