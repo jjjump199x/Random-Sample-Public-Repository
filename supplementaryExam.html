@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplemetary Activity</title>
+
+    <style>
+        body {
+            margin-top: 10%;
+            background-image: linear-gradient(to right, lightcoral, white);
+            text-align: center;
+        }
+        table, th, td {
+            border: 2px solid black;
+            padding: 5px;
+            text-align: center;
+            /* border-collapse: collapse; */
+            margin: auto;
+        }
+        td {
+            height: 40px !important;
+
+        }
+        th {
+            background-color: rosybrown;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Table for Activity #4 -->
+    <table id="tableOfMountains">
+        <tr>
+            <h3>TABLE OF MOUNTAINS</h3>
+            <th>NAME</th>
+            <th>HEIGHT</th>
+            <th>PLACE</th>
+        </tr>
+    </table>
+
+    <script>
+        // #1 LOOPING A TRIANGLE
+        let star = "";
+
+        function halfPyramid() {
+            // outer loop
+            for (i = 0; i <= 6; i++) {
+                // inner loop
+                for (ctr = 0; ctr <= i; ctr++) {
+                    star += "*";
+                }
+                star += "\n";
+            }
+            console.log(star);
+        }
+        halfPyramid();
+
+
+        // #2 BEAN COUNTING
+        let str1 = "Baa Baa Black Sheep";
+
+        function countBs(str1) {
+            var b = 0;
+            for (i = 0; i < str1.length; i++) {
+                if (str1.charAt(i) === "B") {
+                    b += 1;
+                }
+            }
+            return b;
+        }
+        console.log("'B' appears " + countBs(str1) + " times in " + str1);
+
+
+        let str2 = "You cannot break a woman that seeks her happiness from God."
+
+        function countChar(str2, char) {
+            var charCtr = 0;
+            for (i = 0; i < str2.length; i++) {
+                if (str2.charAt(i) == char) {
+                    charCtr++;
+                }
+            }
+            return charCtr;
+        }
+        console.log(str2 + "\n'A' appears " + countChar(str2, 'a') + " times.");
+
+
+        // #3 REVERSING AN ARRAY
+        let arr1 = ["J", "E", "N", "I", "E", "J", "O", "Y"];
+
+        function reverseArray() {
+            var newArray = [];
+            for (i = arr1.length - 1; i >= 0; i--) {
+                newArray.push(arr1[i]);
+            }
+            console.log(newArray);
+            return newArray;
+
+        }
+        reverseArray();
+
+
+        let arr2 = ["H", "A", "P", "P", "I", "N", "E", "S", "S"];
+
+        function reverseArrayInPlace() {
+            for (i = 0; i <= ((arr2.length - 1)) / 2; i++) {
+                var tempArray = arr2[i];
+                arr2[i] = arr2[arr2.length - 1 - i];
+                arr2[arr2.length - 1 - i] = tempArray;
+            }
+            console.log(arr2);
+            return arr2;
+        }
+        reverseArrayInPlace();
+
+
+        // #4 BUILD A TABLE
+        function buildingTableOfMountains() {
+            var mountains = [
+                {
+                    "name": "Kilimanjaro",
+                    "height": "5895",
+                    "place": "Tanzania"
+                },
+                {
+                    "name": "Everest",
+                    "height": "8848",
+                    "place": "Nepal"
+                },
+                {
+                    "name": "Mayon",
+                    "height": "2463",
+                    "place": "Philippines",
+                },
+                {
+                    "name": "Denali",
+                    "height": "6190",
+                    "place": "USA",
+                },
+            ]
+
+            var x = document.getElementById('tableOfMountains');
+
+            for (i = 0; i < mountains.length; i++) {
+                var mountain = mountains[i];
+                var row = document.createElement('tr');
+                var properties = ['name', 'height', 'place',];
+
+                for (ctr = 0; ctr < properties.length; ctr++) {
+                    var cell = document.createElement('td');
+
+                    cell.innerHTML = mountain[properties[ctr]];
+                    row.appendChild(cell);
+                }
+                console.log(mountains);
+                x.appendChild(row);
+            }
+        }
+        buildingTableOfMountains();
+    </script>
+</body>
+
+</html>
